@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowState - Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+    <header class="topbar">
+        <div>
+            <h1>✦ FlowState</h1>
+            <p>Your day, your rhythm.</p>
+        </div>
+        <button id="themeBtn" class="theme-btn">☾ Theme</button>
+    </header>
+
+    <section class="welcome">
+        <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+        <h2>Make today <span>count.</span></h2>
+        <p id="today"></p>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <p>Total Tasks</p>
+            <h2 id="total">0</h2>
+            <span>All your plans</span>
+        </div>
+        <div class="stat-card">
+            <p>Completed</p>
+            <h2 id="completed">0</h2>
+            <span>Little wins ✨</span>
+        </div>
+        <div class="stat-card">
+            <p>Pending</p>
+            <h2 id="pending">0</h2>
+            <span>Keep going!</span>
+        </div>
+    </section>
+
+    <section class="progress-section">
+        <div class="progress-label">
+            <span>Overall progress</span>
+            <strong id="progressText">0%</strong>
+        </div>
+        <div class="progress-track">
+            <div id="progressBar"></div>
+        </div>
+        <p id="motivation">Every small step counts.</p>
+    </section>
+
+    <!-- FOCUS MODE -->
+    <section class="focus-card">
+        <p class="focus-label">✦ YOUR DEEP WORK ZONE</p>
+        <h2>Focus on <span>you.</span></h2>
+        <p class="focus-subtitle">
+            One thing at a time. You've got this.
+        </p>
+
+        <div class="focus-modes">
+            <button id="focusMode" class="mode-btn active">
+                Focus · 25 min
+            </button>
+            <button id="breakMode" class="mode-btn">
+                Break · 5 min
+            </button>
+        </div>
+
+        <div class="timer-circle" id="timerCircle">
+            <div class="timer-inner">
+                <div id="timer">25:00</div>
+                <p id="timerStatus">READY TO FOCUS</p>
+            </div>
+        </div>
+
+        <div class="timer-controls">
+            <button id="startTimer" class="timer-start">
+                ▶ Start focus
+            </button>
+            <button id="resetTimer" class="timer-reset">
+                ↻ Reset
+            </button>
+        </div>
+
+        <p id="focusTip" class="focus-tip">
+            💡 Put distractions away and give yourself 25 minutes.
+        </p>
+    </section>
+
+    <!-- TASK MANAGER -->
+    <section class="task-section">
+        <div class="section-heading">
+            <h2>My tasks</h2>
+            <p>Turn your plans into progress.</p>
+        </div>
+
+        <form id="taskForm">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What do you want to accomplish?"
+                maxlength="120"
+                required
+            >
+
+            <div class="form-options">
+                <select id="priority">
+                    <option value="Medium">Medium priority</option>
+                    <option value="High">High priority</option>
+                    <option value="Low">Low priority</option>
+                </select>
+
+                <input type="date" id="dueDate">
+
+                <button type="submit" class="add-btn">
+                    + Add task
+                </button>
+            </div>
+        </form>
+
+        <div class="toolbar">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="⌕ Search tasks..."
+            >
+
+            <select id="filter">
+                <option value="All">All tasks</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+                <option value="High">High priority</option>
+                <option value="Today">Due today</option>
+            </select>
+        </div>
+
+        <div id="taskList" class="task-list"></div>
+
+        <div id="emptyState" class="empty-state">
+            <div class="empty-icon">✦</div>
+            <h3>A fresh start!</h3>
+            <p>Add your first task and make it happen.</p>
+        </div>
+
+        <button id="clearCompleted" class="clear-btn">
+            Clear completed tasks
+        </button>
+    </section>
+
+    <footer>
+        <p>Made with ✦ and a little ambition.</p>
+        <p>FLOWSTATE © 2026</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
